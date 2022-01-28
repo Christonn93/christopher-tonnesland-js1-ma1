@@ -73,13 +73,17 @@ function createCats(cats) {
 
     if (!catAge) {
       let divContainer = (document.querySelector(".cat-container").innerHTML += `
+            <div>      
             <h5>${name}</h5>
             <p>${missingAge}</p>
+            </div>
             `);
     } else {
       let divContainer = (document.querySelector(".cat-container").innerHTML += `
+            <div>
             <h5>${name}</h5>
             <p>${age}</p>
+            </div>
             `);
     }
   }
