@@ -42,46 +42,66 @@ resultsContainer.innerHTML = "<p>New paragraph</p>";
 // Question 7
 
 const cats = [{
-    name: "Blob",
-    age: 10
-},
-{
-    name: "Harold",
-},
-{
-    name: "Blurt",
-    age: 21
-}
+        name: "Blob",
+        age: 10
+    },
+    {
+        name: "Harold",
+    },
+    {
+        name: "Blurt",
+        age: 21
+    }
 ];
 
-function listElement(list){
-    for(var i = 0; i < cats.length; i++){
-        let catName = cats[i].name;
-        console.log(catName);
+function listElement(list) {
+    for (var i = 0; i < cats.length; i++) {
+        let list = cats[i].name;
+        console.log(list);
     }
-}
+};
 
 listElement();
 
 
 // Question 8
 
-/* const catAge = "Age unknown";
-const divContainer = document.createElement("div");
+/* function createCats(cats) {
 
-function createCats(cats){
-
-        for(var i = 0; i < list.length; i++){
-
-            containerHeader = cats[i].name;
-            var containerHeader = document.createElement("h5");
-            textItem = cats[i].age;
-            var textItem = document.createElement("p");
+    for (var i = 0; i < cats.length; i++) {
+        const name = document.createElement("h5").innerHTML = cats.name;
+        const age = document.createElement("p").innerHTML = cats.age;
     }
-
-    cats.forEach((arrayList) => {
-    })
-
+    
+    if (!cats[i].age) {
+        missingAge = "Age unknown";
+    } else {
+        const divContainer = document.querySelector(".cat-container").innerHTML = name + " " + age;
+        divContainer;
+    }
 }
 
 createCats(); */
+
+function createCats(cats) {
+    for (let q = 0; q < cats.length; q++) {
+
+        let catName = cats[q].name;
+        let catAge = cats[q].age;
+
+        const name = document.createElement("h5").innerHTML = catName;
+        const age = document.createElement("p").innerHTML = catAge;
+        const missingAge = "Age unknown";
+        let divContainer = document.querySelector(".cat-container").innerHTML = name + " " + age;
+
+        cats.forEach((cat) => {
+            if (!catAge) {
+                divContainer = document.querySelector(".cat-container").innerHTML = name + " " + missingAge;
+            } else {
+                divContainer;
+            }
+        })
+    }
+};
+
+createCats(cats)
