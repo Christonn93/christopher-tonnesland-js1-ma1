@@ -88,20 +88,25 @@ function createCats(cats) {
 
         let catName = cats[q].name;
         let catAge = cats[q].age;
-
         const name = document.createElement("h5").innerHTML = catName;
         const age = document.createElement("p").innerHTML = catAge;
         const missingAge = "Age unknown";
-        let divContainer = document.querySelector(".cat-container").innerHTML = name + " " + age;
-
-        cats.forEach((cat) => {
-            if (!catAge) {
-                divContainer = document.querySelector(".cat-container").innerHTML = name + " " + missingAge;
-            } else {
-                divContainer;
-            }
-        })
+        
+        if (!catAge) {
+            let divContainer = document.querySelector(".cat-container").innerHTML += `
+            <h5>${name}</h5>
+            <p>${missingAge}</p>
+            `
+        } else {
+            let divContainer = document.querySelector(".cat-container").innerHTML += `
+            <h5>${name}</h5>
+            <p>${age}</p>
+            `
+        }
     }
+
+
+
 };
 
-createCats(cats)
+createCats(cats);
